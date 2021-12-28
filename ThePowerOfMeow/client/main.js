@@ -5,12 +5,10 @@ Moralis.start({ serverUrl, appId});
 let contractInstance;
 let user;
 
-
 // *** getting instance & user ***
-
 $(document).ready(async function () {
     window.web3 = await Moralis.Web3.enable();
-    contractInstance = new web3.eth.Contract(window.abi, "0x85b6e4A0aE0098d047af9feb459245Bc9e0048bA");
+    contractInstance = new web3.eth.Contract(window.abi, "0x2696236BFB11c14C1D4D2a866B1E670406e598Ba");
     user = ethereum.selectedAddress;
 
     console.log("User address: " + user);
@@ -18,12 +16,8 @@ $(document).ready(async function () {
 });
 
 // ** creating a gen0 in KittyFactory **
-
 function createKitty() {
-
   let dna = getDna();
-  console.log(dna);
-  // alert("dna: " + dna)
 
   contractInstance.methods.createKittyGen0(dna).send({from: ethereum.selectedAddress}, function(error, txHash){
     if(error) {
@@ -47,7 +41,6 @@ function createKitty() {
 }
 
 // ***** calling the catalogue *****
-
 let usersCats
 
 async function showCatalogue(page) {
@@ -68,7 +61,6 @@ async function showCatalogue(page) {
     if(page == "myKitties") {
       $('#catsDiv').append(featureBox)
       $('#newFeatureBox'+id).append(newCatDiv)
-      // $('#newFeatureBox'+id).append(newCattributes)
       $('#newFeatureBox'+id).append(newIdGen)
       $('#newFeatureBox'+id).attr('data-toggle', 'modal')
       $('#newFeatureBox'+id).attr('data-target', '#sellWindow')
@@ -89,12 +81,6 @@ async function showCatalogue(page) {
       $('#newFeatureBox'+id).append(newCatDiv)
       $('#newFeatureBox'+id).append(newCattributes)
       $('#newCat'+id).css('transform', 'scale(.6)')
-      // let fertility = await contractInstance.methods.checkFertility(cat.generation, id).call()
-      // if(!fertility){
-      //   $('#newFeatureBox'+id).prop('onclick', null)
-      //   $('#newFeatureBox'+id).attr('data-dismiss', 'none')
-      //   $('#newFeatureBox'+id).css({'opacity': '25%'})
-      // }
     }
 
     styleCat(cat.genes, id)
@@ -106,7 +92,7 @@ async function showOffers() {
   let allOffers = await contractInstance.methods.getAllTokenOnSale().call()
   if(allOffers == 0) {
     $('#noCatsForSale').show()
-    $('#marketMessage').hide()    
+    $('#marketMessage').hide()
   }
   let activeOffers = [...new Set(allOffers)];
   for(i = 0; i < activeOffers.length; i++) {
@@ -123,9 +109,7 @@ async function showOffers() {
       $('#newMarketBox'+id).append(newCatDiv)
       styleCat(cat.genes, id)
       $('#newCat'+id).css('transform', 'scale(.8)')
-      // $('#newMarketBox'+id).attr('onClick', 'renderSaleWindow("' + id + ',' + ethPrice + ',' + newCatOnSale.owner +'");')
       $('#newMarketBox'+id).attr('onClick', 'renderSaleWindow(' + id + ');')
-
     }
   }
 }
@@ -133,7 +117,6 @@ async function showOffers() {
 async function renderSaleWindow(id) {
   let cat = await contractInstance.methods.getKitty(id).call()
   let forSale = await contractInstance.methods.tokenIdToOffer(id).call()
-
   let sellPrice = web3.utils.fromWei(forSale.price, "ether")
   let newCatDiv = renderCatDiv(id)
   let newCattributes = renderCattributes(id, cat.genes, cat.matronId, cat.sireId, cat.generation)
@@ -177,7 +160,6 @@ async function buyCat(id) {
   })
 
   $("#marketWindow .close").click()
-
 }
 
 //**** putting cats up for sale from catalogue ******
@@ -210,7 +192,6 @@ async function catForSale(id) {
   }
   styleCat(cat.genes, id)
 }
-
 
 async function sellCat(id) {
   let salePrice = $("#setPriceInput").val()
@@ -266,7 +247,6 @@ async function removeSellOffer(id) {
 }
 
 // ***** breeding *****
-
 let genderSelector;
 let matronSelection = -1;
 let sireSelection = -1;
@@ -363,48 +343,4 @@ async function gen0features() {
     $('#createGen0header').hide()
     $('#gen0message').append(gen0message)
   }
-}
-
-
-// --------------------- tests --------------------  //
-
-async function test() {
-    alert("testing button 3");
-
-    // let blockNumber = await web3.eth.getBlockNumber()
-    // console.log(blockNumber)
-    // let blocky = await web3.eth.getBlock()
-    // console.log(blocky.timestamp)
-
-
-}
-
-function getUserAcc() {
-	// await window.ethereum.enable();
-
-	web3.eth.getAccounts(function (error, accounts) {
-		console.log('current account:' + accounts[0]);
-	});
-
-}
-
-async function countTokensTest() {
-
-  contractInstance.methods.balanceOf(user).call(function (err, res) {
-    if (err) {
-      console.log("An error occured", err)
-      return
-    }
-    console.log("number of tokens: ", res)
-    })
-}
-
-async function kittyDetailsTest() {
-  let kitty = contractInstance.methods.getKitty("1").call(function (err, res) {
-    if (err) {
-      console.log("An error occured", err)
-      return
-    }
-    console.log(res[0]);
-  })
 }

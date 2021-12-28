@@ -7,7 +7,6 @@ function renderFeatureBox(id) {
       <div class="sellBanner">For Sale</div>
     </div>
 
-
     </div>
   `
   return featureBox
@@ -177,18 +176,6 @@ function styleCat(dna, id) {
   var bellyColor = colors[Math.trunc(dna/1000%100)];
   var jowlsColor = colors[Math.trunc(dna/10%100)];
   var animationStyle = dna%10;
-
-  // console.log("headcolor: " + headColor)
-  // console.log("eyeColor: " + eyeColor)
-  // console.log("pawsColor: " + pawsColor)
-  // console.log("stripesColor: " + stripesColor)
-  // console.log("eyeStyle: " + eyeStyle)
-  // console.log("stripeStyle: " + stripeStyle)
-  // console.log("bellyColor: " + bellyColor)
-  // console.log("jowlsColor: " + jowlsColor)
-  // console.log("animationStyle: " + animationStyle)
-
-
   singleHeadColor(headColor, id);
   singleEyeColor(eyeColor, id);
   singlePawsColor(pawsColor, id);
@@ -222,10 +209,4 @@ document.addEventListener('mousemove', (e) => {
 
     $('.cat__eye_left').css('transform', 'translate(' + moveX + 'px,' + moveY + 'px)')
     $('.cat__eye_right').css('transform', 'translate(' + moveX + 'px,' + moveY + 'px)')
-
-    // document.querySelector('.cat__eye_left').style.transform = 'translate(' + moveX + 'px,' + moveY + 'px)';
-    // document.querySelector('.cat__eye_right').style.transform = 'translate(' + moveX + 'px,' + moveY + 'px)';
-
-    // let cursor = document.querySelector('.cursor');
-    // cursor.setAttribute('style', 'top:' + positionY + 'px; left:' + positionX + 'px');
 }, false);

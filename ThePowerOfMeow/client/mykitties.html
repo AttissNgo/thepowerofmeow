@@ -9,17 +9,10 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
-
-	<!-- added next scripts after Moralis login wasn't working -->
-	<!-- they are in the old site, just forgot -->
 	<script src="https://unpkg.com/moralis/dist/moralis.js"></script>
 	<script type="text/javascript" src="assets/js/jquery-3.4.1.js"></script>
-
 	<script type="text/javascript" src="./web3.min.js"></script>
-
   <script src="./abi.js"></script>
-
-
 
 	<link href="style.css" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/animations.css">
@@ -50,19 +43,14 @@
 					<div class="row" id="saleWindow">
 
 						<div class="input-group mb-3">
-  						<!-- <div class="input-group-prepend">
-    						<span class="input-group-text" id="inputGroup-sizing-default"></span>
-  						</div> -->
   						<input min="0.01" id="setPriceInput" placeholder="Enter Price (ETH)" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
 							<div class="input-group-append">
     						<button class="btn btn-primary" id="sellButton" type="button">Sell Kitty</button>
     						<button class="btn btn-primary" id="removeButton" type="button">Remove Offer</button>
   						</div>
 						</div>
-
 					</div>
 			</div>
-
 		</div>
 	</div>
 </div>
@@ -126,8 +114,6 @@
 			</div>
 	</div>
 
-
-
 <div class="row bottomSpacer"></div>
 
 <!--- Footer -->
@@ -158,11 +144,6 @@
 	$("#breedButton").hide()
 </script>
 
-<!-- <script>
-  $("#setPriceInput").change(function(){
-    $("#sellButton").prop('disabled', false);
-  })
-</script> -->
 
 <!-- create catalogue when page loads -->
 <script>
@@ -181,7 +162,5 @@
 <script src="assets/js/styleSingleCat.js"></script>
 <script src="assets/js/colors.js"></script>
 <script src="assets/js/colors2.js"></script>
-<!-- <script src="assets/js/catSettings.js"></script> -->
-<!-- <script src="assets/js/catFactory.js"></script> -->
 
 </html>

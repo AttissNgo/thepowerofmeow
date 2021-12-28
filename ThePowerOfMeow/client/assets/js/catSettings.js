@@ -6,8 +6,6 @@ var defaultDNA = {
     "eyecolor" : 10,
     "pawscolor" : 10,
     "stripescolor" : 10,
-
-    //Cattributes
     "eyeshape" : 1,
     "decorationshape" : 1,
     "bellycolor" : 10,
@@ -16,19 +14,16 @@ var defaultDNA = {
     "lastNum" :  1
     }
 
-// when page load
 $( document ).ready(function() {
   $('#dnabody').html(defaultDNA.headColor);
   $('#dnaeye').html(defaultDNA.eyeColor);
   $('#dnapaws').html(defaultDNA.pawsColor);
   $('#dnastripes').html(defaultDNA.stripesColor);
-
   $('#dnaeyeshape').html(defaultDNA.eyesshape);
   $('#dnadecoration').html(defaultDNA.decorationshape);
   $('#dnabelly').html(defaultDNA.bellycolor);
   $('#dnajowls').html(defaultDNA.jowlscolor);
   $('#dnaanimation').html(defaultDNA.animation);
-  // $('#dnaspecial').html(defaultDNA.lastNum)
 
   renderCat(defaultDNA)
 });
@@ -44,7 +39,6 @@ function getDna(){
     dna += $('#dnabelly').html()
     dna += $('#dnajowls').html()
     dna += $('#dnaanimation').html()
-    // dna += $('#dnaspecial').html()
 
     return parseInt(dna)
 }
@@ -58,31 +52,23 @@ function renderCat(dna){
     $('#pawscolor').val(dna.pawscolor)
     stripesColor(colors[dna.stripescolor],dna.stripescolor)
     $('#stripescolor').val(dna.stripescolor)
-
     eyeVariation(dna.eyeshape)
     $('#eyeshape').val(dna.eyeshape)
-
     decorationVariation(dna.decorationshape)
     $('#decorationshape').val(dna.decorationshape)
-
     bellyColor(colorsB[dna.bellycolor],dna.bellycolor)
     $('#bellycolor').val(dna.bellycolor)
-
     jowlsColor(colorsB[dna.jowlscolor],dna.jowlscolor)
     $('#jowlscolor').val(dna.jowlscolor)
-
     animationVariation(dna.animation)
     $('#animationType').val(dna.animation)
-
     $("#eyeStyleSlider").hide();
     $("#stripesStyleSlider").hide();
     $("#bellySlider").hide();
     $("#jowlsSlider").hide();
     $("#animationSlider").hide();
-
 }
 
-// Changing cat colors
 $('#bodycolor').change(()=>{
     var colorVal = $('#bodycolor').val()
     headColor(colors[colorVal],colorVal)
@@ -188,7 +174,6 @@ $('#random').click(()=>{
 })
 
 $('#reset').click(()=>{
-
     headColor(colors[defaultDNA.headcolor],defaultDNA.headcolor)
     $("#bodycolor").val(defaultDNA.headcolor)
     eyeColor(colors[defaultDNA.eyecolor],defaultDNA.eyecolor)
@@ -207,5 +192,4 @@ $('#reset').click(()=>{
     $("#jowlscolor").val(defaultDNA.jowlscolor)
     animationVariation(defaultDNA.animation)
     $("#animationType").val(defaultDNA.animation)
-
 })

@@ -14,88 +14,84 @@ function genColors(){
     return colors
 }
 
-//This function code needs to modified so that it works with Your cat code.
 function headColor(color,code) {
-    $('.cat__head, .cat__chest').css('background', '#' + color)  //This changes the color of the cat
-    $('#headcode').html('code: '+code) //This updates text of the badge next to the slider
-    $('#dnabody').html(code) //This updates the body color part of the DNA that is displayed below the cat
+    $('.cat__head, .cat__chest').css('background', '#' + color)
+    $('#headcode').html('code: '+code)
+    $('#dnabody').html(code)
 }
 
 function eyeColor(color,code) {
-    $('.cat__eye_left, .cat__eye_right').css('background', '#' + color)  //This changes the color of the cat
-    $('#eyecode').html('code: '+code) //This updates text of the badge next to the slider
-    $('#dnaeye').html(code) //This updates the body color part of the DNA that is displayed below the cat
+    $('.cat__eye_left, .cat__eye_right').css('background', '#' + color)
+    $('#eyecode').html('code: '+code)
+    $('#dnaeye').html(code)
 }
 
 function pawsColor(color,code) {
-    $('.cat__backpaw, .cat__frontpaw, .cat__tail, .cat__ear_left, .cat__ear_right').css('background', '#' + color)  //This changes the color of the cat
-    $('#pawscode').html('code: '+code) //This updates text of the badge next to the slider
-    $('#dnapaws').html(code) //This updates the body color part of the DNA that is displayed below the cat
+    $('.cat__backpaw, .cat__frontpaw, .cat__tail, .cat__ear_left, .cat__ear_right').css('background', '#' + color)
+    $('#pawscode').html('code: '+code)
+    $('#dnapaws').html(code)
 }
 
 function stripesColor(color,code) {
-    $('.cat__body_stripes, .cat__head_stripes').css('background', '#' + color)  //This changes the color of the cat
-    $('#stripescode').html('code: '+code) //This updates text of the badge next to the slider
-    $('#dnastripes').html(code) //This updates the body color part of the DNA that is displayed below the cat
+    $('.cat__body_stripes, .cat__head_stripes').css('background', '#' + color)
+    $('#stripescode').html('code: '+code)
+    $('#dnastripes').html(code)
 }
 
 function bellyColor(color,code) {
-    $('.cat__belly').css('background', '#' + color)  //This changes the color of the cat
-    $('#bellycode').html('code: '+code) //This updates text of the badge next to the slider
-    $('#dnabelly').html(code) //This updates the body color part of the DNA that is displayed below the cat
+    $('.cat__belly').css('background', '#' + color)
+    $('#bellycode').html('code: '+code)
+    $('#dnabelly').html(code)
 }
 
 function jowlsColor(color,code) {
-    $('.cat__jowls_left, .cat__jowls_right').css('background', '#' + color)  //This changes the color of the cat
-    $('#jowlscode').html('code: '+code) //This updates text of the badge next to the slider
-    $('#dnajowls').html(code) //This updates the body color part of the DNA that is displayed below the cat
+    $('.cat__jowls_left, .cat__jowls_right').css('background', '#' + color)
+    $('#jowlscode').html('code: '+code)
+    $('#dnajowls').html(code)
 }
 
 
-//###################################################
-//Functions below will be used later on in the project
-//###################################################
 function eyeVariation(num) {
 
-    $('#dnaeyeshape').html(num) //update slider display
+    $('#dnaeyeshape').html(num)
     switch (num) {
         case 1:
             normalEyes()
-            $('#eyeName').html('Basic') //sets slider badge to 'basic'
+            $('#eyeName').html('Basic')
             break
         case 2:
-            normalEyes()//to initialize
+            normalEyes()
             $('#eyeName').html('Ghostboi')
             eyesType2()
             break
         case 3:
-            normalEyes()//to initialize
+            normalEyes()
             $('#eyeName').html('Mr. Sparkles')
             eyesType3()
             break
         case 4:
-            normalEyes()//to initialize
+            normalEyes()
             $('#eyeName').html('Grumpy')
             eyesType4()
             break
         case 5:
-            normalEyes()//to initialize
+            normalEyes()
             $('#eyeName').html('Sadeyes')
             eyesType5()
             break
         case 6:
-            normalEyes()//to initialize
+            normalEyes()
             $('#eyeName').html('Wonky')
             eyesType6()
             break
         case 7:
-            normalEyes()//to initialize
+            normalEyes()
             $('#eyeName').html('Dark Lord')
             eyesType7()
             break
         default:
             normalEyes()
-            $('#eyeName').html('Basic') //sets slider badge to 'basic'
+            $('#eyeName').html('Basic')
             break
     }
 }
@@ -227,8 +223,6 @@ function eyesType7() {
     $('.cat__glint_left, .cat__glint_right').css({"opacity": "10%"})
 }
 
-
-
 function normaldecoration() {
     $('.cat__head_stripes').css({"opacity": "25%"})
     $('.cat__head_stripe1').css({"height" : "44px"})
@@ -243,7 +237,6 @@ function normaldecoration() {
     $('.cat__left_stripe3').css({"width": "30px"})
 }
 function decorationType2() {
-
     $('.cat__head_stripes').css({"opacity": "55%"})
     $('.cat__body_stripes').css({"opacity": "50%"})
     $('.cat__head_stripe2').css({"transform": "rotate(25deg)", "left": "39%"})

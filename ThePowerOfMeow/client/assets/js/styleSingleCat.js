@@ -189,8 +189,6 @@ function singleDecorationVariation(num, id) {
 
 function singleBellyColor(dna, id) {
     $('#belly' + id).css('background', '#' + dna)
-
-    // console.log("belly color: " + dna)
 }
 
 function singleJowlsColor(dna, id) {
@@ -250,7 +248,4 @@ function singleAnimationVariation(dna, id) {
             $('#pupilR' + id).removeClass('hypnotique')
             break
     }
-
-    // console.log("animation: " + dna)
-
 }

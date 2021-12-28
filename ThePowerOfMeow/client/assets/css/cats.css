@@ -6,7 +6,6 @@
 
 .cat {
     position: relative;
-    /* transform: scale(.5); */
 }
 
 .catSmall {
@@ -27,7 +26,6 @@
     position: relative;
     width: 230px;
     height: 200px;
-    /* border: 5px solid transparent; */
     -webkit-border-radius: 50% 50% 50% 50%;
     border-radius: 50% 50% 50% 50%;
     background: #41adf0;
@@ -42,7 +40,6 @@
 .cat__ear_left, .cat__ear_right {
     position: absolute;
     top: -20px;
-    /* top: 33px; */
     width: 150px;
     height: 150px;
     border: 5px solid transparent;
@@ -80,16 +77,12 @@
     height: 57px;
     background: #d9ffe3;
     border-radius: 50% 50% 50% 50%;
-/*     margin: 38px; */
-/*     z-index: 100; */
 }
 .cat__eye_left {
-    /* top: 50%; */
     left: 15%;
     position: absolute;
 }
 .cat__eye_right {
-    /* top: 50%; */
     right: 15%;
     position: absolute;
 }
@@ -301,7 +294,6 @@
     width: 88px;
     height: 69px;
     border-radius: 50%;
-    /* background: #fff3e0; */
     background-color: #fff3e0;
     left: 21%;
     opacity: 75%;

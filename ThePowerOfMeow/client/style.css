@@ -5,8 +5,6 @@ html, body {
   width: 100%;
   font-family: 'Poppins', sans-serif;
   color: #222;
-  /* background-color: #799fb8; */
-  /* background-color: #2d6285; */
   background-color: #357096;
 }
 
@@ -22,7 +20,7 @@ html, body {
 
 .navbar-nav li {
   padding-right: 20px;
-} /* space between the list items */
+}
 .nav-link {
   font-size: 1.1em !important;
 }
@@ -30,13 +28,13 @@ html, body {
 .carousel-inner img {
   width: 100%;
   height: 100%;
-} /* so you can see the whole image */
+}
 
 .carousel-caption {
   position: absolute;
   top: 35%;
   transform: translateY(-50%);
-} /* moves carousel text up into the middle */
+}
 
 .carousel-caption h1 {
   font-size: 300%;
@@ -53,7 +51,7 @@ html, body {
 .btn-primary {
   background-color: #6648b1;
   border: 1px solid #563d7c;
-} /* bootstrap default is the blue color, this changes it to purple */
+}
 
 .btn-primary:hover {
   background-color: #563d7c;
@@ -76,46 +74,40 @@ html, body {
 .jumbotron {
   padding: 1rem;
   border-radius: 0;
-} /* REDUCES the default padding and border radius of the jumbotron */
+}
 
 .padding {
   padding-bottom: 2rem;
-} /* adds a bit more padding on bottom of all
-'padding' classes to space stuff out */
+}
 
 .welcome {
   width: 75%;
   margin: 0 auto;
   padding-top: 2rem;
-} /* centers 'welcome' class text and keeps it from running off to the
-edges of the page */
+}
 
 .welcome hr {
   border-top: 2px solid #b4b4b4;
   width: 95%;
   margin-top: .3rem;
   margin-bottom: 1rem;
-} /* without adding the border color, this doesn't show up at all */
-
+}
 
 .fun {
   width: 100%;
-  /* margin-bottom: 2rem; */
   background-color: #526a7a;
-} /* without this the button is small and just sits on the left side */
+}
 
 .gif {
   max-width: 100%;
-} /* without this emoji gifs get cut off vertically in a weird way */
-
-
+}
 
 footer {
   background-color: #3f3f3f;
   color: #d5d5d5;
   padding-top: 1.5rem;
   line-height: 50%;
-} /* nice dark background for footer */
+}
 
 hr.light {
   border-top: 1px solid #d5d5d5;
@@ -124,25 +116,23 @@ hr.light {
   margin-bottom: .3rem;
   margin-left: auto;
   margin-right: auto;
-} /* makes HRs around footer items SMALLER and TIGHTER (and grey) */
+}
 
 footer a {
   color: #d5d5d5;
-} /* this is really just for the phone number, since this will show up
-as a blue link on cell phones */
+}
 
 .bottomSpacer {
   height: 10rem;
 }
 
 /*---Media Queries --*/
-/* this section deals with resizing elements for different devices */
 @media (max-width: 992px) {
   .social a {
     font-size: 4em;
     padding: 2rem;
   }
-  }
+}
 @media (max-width: 768px) {
   .carousel-caption {
     top: 45%;
@@ -158,7 +148,7 @@ as a blue link on cell phones */
   .carousel-caption .btn {
     font-size: 95%;
     padding: 8px 14px;
-  } /*without this the buttons just disappear on small screen */
+  }
 
   .display-4 {
     font-size: 200%;
@@ -184,7 +174,7 @@ as a blue link on cell phones */
   }
   .carousel-indicators {
     display: none;
-  } /*makes carousel sliders DISAPPEAR on smallest screen */
+  }
 
   .display-4 {
     font-size: 160%;
@@ -194,7 +184,6 @@ as a blue link on cell phones */
     padding: .7rem;
   }
 }
-
 
 /*---Firefox Bug Fix --*/
 .carousel-item {
@@ -242,7 +231,6 @@ figure {
   box-shadow: 0px 2px 7px 0px #444444;
 }
 
-
 /* Factory styles */
 .factory-caption  {
     color: #fff;
@@ -265,17 +253,12 @@ figure {
 .catBox {
     background-color: #b7c7df;
     border-radius: 10px;
-
-    /* margin-right: 1em;
-    margin-left: 1em; */
 }
 
 .catBoxSmall {
     background-color: #b7c7df;
     border-radius: 10px;
     padding-top: 0;
-    /* margin-right: 1em;
-    margin-left: 1em; */
 }
 
 .dnaDiv {
@@ -302,17 +285,10 @@ input[type="button"]:disabled {
 }
 
 /*breeding */
-
 .featureBox {
   background-color: #b7c7df;
-
   position: relative;
-  /* padding-left:.5em;
-  padding-right:.5em;
-  padding-top: 1em;
-  padding-bottom: 1em; */
   border-radius: 10px;
-  /* margin: 2em; */
   transition: 0.4s ease-in-out;
   box-shadow: 0px 1px 7px -2px #444444;
   text-align: center;
@@ -323,20 +299,13 @@ input[type="button"]:disabled {
 }
 
 .featureBox:hover, .marketBox:hover {
-    /* border: 1px solid #ddede1; */
     box-shadow: 0px 32px 70px 0px rgba(0, 0, 2, 0.58);
-    /* box-shadow: 0px 16px 35px 0px rgba(0, 0, 2, 0.08); */
 }
 
 .marketBox {
   background-color: #b7c7df;
   border: .25rem solid #22b00c;
-  /* padding-left:.5em;
-  padding-right:.5em;
-  padding-top: 1em;
-  padding-bottom: 1em; */
   border-radius: 10px;
-  /* margin: 2em; */
   transition: 0.4s ease-in-out;
   box-shadow: 0px 1px 7px -2px #444444;
   text-align: center;
@@ -344,17 +313,11 @@ input[type="button"]:disabled {
 
 .catalogueWindow {
   background-color: #357096;
-  /* width: fit-content; */
-  /* display: flex;
-  justify-content: center; */
 }
 
 .catDiv {
     background-color: #b7c7df;
-    /* display: flex;
-    justify-content: center; */
     width: fit-content;
-    /* margin: 0 auto; */
 }
 
 /* modal stuff */
@@ -373,30 +336,24 @@ input[type="button"]:disabled {
 @media (min-width: 1200px) {
   .modal-xl {
     max-width: 1000px;
-    /* max-width: 1140px; */
   }
 }
 
 #matronBox {
-  /* background-color: #000000; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* position: relative; */
 }
 
 #sireBox {
-  /* background-color: #000000; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* position: relative; */
 }
-
 
 .sellBanner-container {
 	width: 150px;
@@ -440,20 +397,3 @@ input[type="button"]:disabled {
 	text-transform: uppercase;
 	text-shadow: 0 2px 2px rgba(0,0,0,0.4);
 }
-
-/*
-Extra small (xs) devices (portrait phones, less than 576px)
-No media query since this is the default in Bootstrap
-
-Small (sm) devices (landscape phones, 576px and up)
-@media (min-width: 576px) { ... }
-
-Medium (md) devices (tablets, 768px and up)
-@media (min-width: 768px) { ... }
-
-Large (lg) devices (desktops, 992px and up)
-@media (min-width: 992px) { ... }
-
-Extra (xl) large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) { ... }
-*/
