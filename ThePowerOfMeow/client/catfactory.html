@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Cat Factory</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
+
+	<script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+	<script type="text/javascript" src="assets/js/jquery-3.4.1.js"></script>
+
+	<script type="text/javascript" src="./web3.min.js"></script>
+
+	<script src="./abi.js"></script>
+
+	<link href="style.css" rel="stylesheet">
+	<!-- <link rel="stylesheet" href="https://m.w3newbie.com/you-tube.css"> -->
+	<link rel="stylesheet" href="assets/css/animations.css">
+	<link rel="stylesheet" href="assets/css/cats.css">
+	<link rel="stylesheet" href="assets/css/colors.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-light sticky-top">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="index.html"><i class="fas fa-cat"></i> The Power Of Meow</a>
+		<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item"> <!-- 'active' makes it darker when you're on that tab -->
+					<a class="nav-link" href="mykitties.html">My Kitties</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="marketplace.html">Marketplace</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="catfactory.html">Cat Factory</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<!--- TEST BUTTON!!! -->
+<!-- <div class="row justify-content-center">
+	<button id="test_button" type="button" class="btn btn-primary btn-lg"
+	onclick="test()">Test</button>
+</div> -->
+
+<!--- Cat Factory text -->
+		<div class="factory-caption">
+			<h1 class="display-2">Cat Factory</h1>
+			<h3 id="createGen0header">Create your own custom Generation Ø kitty</h3>
+			<div id="gen0message">
+				<!-- render gen0 message here -->
+			</div>
+		</div>
+
+<!-- Cat boxes -->
+<div class="cursor"></div>
+<div class="container-fluid">
+		<div class="row justify-content-center">
+      <div class="col-lg-4 catBox m-2 light-b-shadow">
+
+					<div class="cat" id="newCat">
+
+
+
+							<div class="headContainer">
+
+									<div class="cat__ear">
+											<div id="leftear" class="cat__ear_left">
+												<div class="cat__inner_ear_left"></div>
+											</div>
+											<div id="rightear" class="cat__ear_right">
+												<div class="cat__inner_ear_right"></div>
+											</div>
+									</div>
+
+									<div id="head" class="cat__head">
+
+										<div id="headstripes" class="cat__head_stripes"></div>
+										<div class="cat__head_stripes cat__head_stripe1"></div>
+										<div class="cat__head_stripes cat__head_stripe2"></div>
+										<div class="cat__head_stripes cat__head_stripe3"></div>
+
+										<div class="cat__eye">
+											<div class="cat__eye_left">
+												<div id="pupilL" class="cat__pupil_left">
+													<div class="cat__glint_left"></div>
+													<div class="cat__glint2_left"></div>
+													<div class="cat__glint3_left"></div>
+
+												</div>
+												<div class="cat__glintExtra_left"></div>
+												<div id="eyelidL" class="cat__eyelid_left"></div>
+											</div>
+
+											<div class="cat__eye_right">
+												<div id="pupilR" class="cat__pupil_right">
+													<div class="cat__glint_right"></div>
+													<div class="cat__glint2_right"></div>
+													<div class="cat__glint3_right"></div>
+
+												</div>
+												<div class="cat__glintExtra_right"></div>
+												<div id="eyelidR" class="cat__eyelid_right"></div>
+											</div>
+										</div>
+
+										<div id="nose" class="cat__nose">
+											<div class="cat__nostril_left"></div>
+											<div class="cat__nostril_right"></div>
+										</div>
+
+										<div class="cat__jowls">
+											<div id="jowlL" class="cat__jowls_left"></div>
+											<div id="jowlR" class="cat__jowls_right"></div>
+										</div>
+
+										<div class="cat__whiskers">
+											<div id="whiskL" class="cat__whiskers_left"></div>
+											<div id="whiskR" class="cat__whiskers_right"></div>
+										</div>
+
+									</div>
+						</div>
+
+						<div class="bodyContainer">
+
+
+							<div class="cat__body">
+									<div id="tail" class="cat__tail"></div>
+
+									<div class="cat__backpaw cat__right_back_paw">
+										<div class="cat__fingers"></div>
+									</div>
+									<div class="cat__backpaw cat__left_back_paw">
+										<div class="cat__fingers"></div>
+									</div>
+
+									<div class="cat__chest"></div>
+
+									<div id="bodystripes" class="cat__body_stripes"></div>
+									<div class="cat__body_stripes cat__left_stripe1"></div>
+									<div class="cat__body_stripes cat__left_stripe2"></div>
+									<div class="cat__body_stripes cat__left_stripe3"></div>
+									<div class="cat__body_stripes cat__right_stripe1"></div>
+									<div class="cat__body_stripes cat__right_stripe2"></div>
+									<div class="cat__body_stripes cat__right_stripe3"></div>
+
+									<div id="belly" class="cat__belly"></div>
+
+									<div id="rightPaw" class="cat__frontpaw cat__right_front_paw">
+										<div class="cat__fingers"></div>
+									</div>
+									<div id="leftPaw" class="cat__frontpaw cat__left_front_paw">
+										<div class="cat__fingers"></div>
+									</div>
+
+
+
+							</div>
+						</div>
+
+				</div>
+
+
+							<div class="dnaDiv" id="catDNA">
+									<b>
+											DNA:
+											<!-- Colors -->
+											 <span id="dnabody"></span>
+											 <span id="dnaeye"></span>
+											 <span id="dnapaws"></span>
+											 <span id="dnastripes"></span>
+
+											 <!-- Cattributes -->
+											 <span id="dnaeyeshape"></span>
+											 <span id="dnadecoration"></span>
+											 <span id="dnabelly"></span>
+											 <span id="dnajowls"></span>
+											 <span id="dnaanimation"></span>
+											 <span id="dnaspecial"></span>
+									</b>
+							</div>
+
+
+
+            </div>
+
+
+		<!-- <div class="col-sm catBox m-2 light-b-shadow"> -->
+		<div class="col-lg-6 catBox m-2 light-b-shadow">
+
+              <br>
+			<!-- Cat colors -->
+		<div id="catColors">
+			    <button id="ColorsTab" type="button" class="btn btn-dark" disabled="true">Colors</button>
+			    <button id="CattributesTab" type="button" class="btn btn-dark">Cattributes</button>
+
+                <div id="headSlider" class="form-group">
+                    <label for="formControlRange"><b>Head and body</b><span class="badge badge-pill badge-secondary ml-2" id="headcode"></span></label>
+                    <input type="range" min="10" max="98" class="form-control-range" id="bodycolor">
+                </div>
+
+                <div id="eyesSlider" class="form-group">
+                    <label for="formControlRange"><b>Eyes</b><span class="badge badge-pill badge-secondary ml-2" id="eyecode"></span></label>
+                    <input type="range" min="10" max="98" class="form-control-range" id="eyecolor">
+                </div>
+
+                <div id="pawsSlider" class="form-group">
+                    <label for="formControlRange"><b>Paws, ears and tail</b><span class="badge badge-pill badge-secondary ml-2" id="pawscode"></span></label>
+                    <input type="range" min="10" max="98" class="form-control-range" id="pawscolor">
+                </div>
+
+                <div id="stripesSlider" class="form-group">
+                    <label for="formControlRange"><b>Stripes</b><span class="badge badge-pill badge-secondary ml-2" id="stripescode"></span></label>
+                    <input type="range" min="10" max="98" class="form-control-range" id="stripescolor">
+                </div>
+
+								<div class="row">
+										<div class="col">
+			                <div id="eyeStyleSlider" class="form-group">
+			                    <label for="formControlRange"><b>Eye style</b><span class="badge badge-pill badge-secondary ml-2" id="eyeName"></span></label>
+			                    <input type="range" min="1" max="7" class="form-control-range" id="eyeshape">
+			                </div>
+										</div>
+										<div class="col">
+			                <div id="stripesStyleSlider" class="form-group">
+			                    <label for="formControlRange"><b>Stripe style</b><span class="badge badge-pill badge-secondary ml-2" id="decorationName"></span></label>
+			                    <input type="range" min="1" max="7" class="form-control-range" id="decorationshape">
+			                </div>
+										</div>
+								</div>
+
+                <div id="bellySlider" class="form-group">
+                    <label for="formControlRange"><b>Belly color</b><span class="badge badge-pill badge-secondary ml-2" id="bellycode"></span></label>
+                    <input type="range" min="10" max="50" class="form-control-range" id="bellycolor">
+                </div>
+
+                <div id="jowlsSlider" class="form-group">
+                    <label for="formControlRange"><b>Jowls color</b><span class="badge badge-pill badge-secondary ml-2" id="jowlscode"></span></label>
+                    <input type="range" min="10" max="50" class="form-control-range" id="jowlscolor">
+                </div>
+
+                <div id="animationSlider" class="form-group">
+                    <label for="formControlRange"><b>Animation</b><span class="badge badge-pill badge-secondary ml-2" id="animationName"></span></label>
+                    <input type="range" min="1" max="7" class="form-control-range" id="animationType">
+                </div>
+            </div>
+
+    </div>
+
+	</div>
+
+	<div class="row ml-5">
+			<div class="col-lg-4 catButtons">
+				<button id="random" type="button" class="btn btn-dark">Random</button>
+				<button id="reset" type="button" class="btn btn-dark">Reset</button>
+				<button id="create_kitty" type="button" class="btn btn-dark" onclick="createKitty()">Create Kitty</button>
+			</div>
+	</div>
+
+</div>
+
+<div class="row bottomSpacer"></div>
+
+
+
+<!--- Footer -->
+<footer>
+	<div class="container-fluid">
+		<div class="row text-center">
+
+			<div class="col-12 p-0">
+				<hr class="light">
+				<h5>About</h5>
+				<hr class="light">
+				<br>
+				<p>This Dapp was created for the Moralis Academy</p>
+        <p>Ethereum Dapp Programming course</p>
+			</div>
+
+			<div class="col-12 p-0">
+				<hr class="light">
+				<h6>&copy; 2021 Attiss Ngo </h6>
+			</div>
+
+	</div>
+</footer>
+
+<script>
+	$(document).ready(function () {
+    setTimeout(() => {
+			gen0features()
+	  }, 100)
+	});
+</script>
+
+
+
+</body>
+
+<script src="./main.js"></script>
+<script src="assets/js/colors.js"></script>
+<script src="assets/js/colors2.js"></script>
+<script src="assets/js/catSettings.js"></script>
+<script src="assets/js/catFactory.js"></script>
+</html>

@@ -1,0 +1,137 @@
+.movingHead {
+    animation: moveHead 3s infinite;
+}
+.movingTail {
+    animation: moveTail 2s infinite;
+}
+.movingNose {
+    animation: moveNose 4s infinite;
+}
+.movingPaw1 {
+    animation: movePaw1 2s infinite;
+}
+.movingPaw2 {
+    animation: movePaw2 2s infinite;
+}
+.movingWhisker {
+    animation: moveWhisker 2s infinite;
+}
+.movingWhiskerB {
+    animation: moveWhiskerB 2s infinite;
+}
+.hypnotique {
+    animation: hypnotize 4s infinite;
+}
+
+@keyframes moveHead {
+    0% {
+        transform: rotate(0deg);
+    }
+    33% {
+        transform: rotate(5deg);
+    }
+    66% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes moveTail {
+    0% {
+        transform: rotate(-40deg);
+
+    }
+    30% {
+        transform: rotate(-48deg);
+        left: 75%;
+    }
+    80% {
+        transform: rotate(-32deg);
+        left: 85%;
+    }
+    100% {
+        transform: rotate(-40deg);
+    }
+}
+
+@keyframes moveNose {
+    0%{transform: translate(0px,0px);}
+
+    54%{transform: translate(0px,1px);}
+    56%{transform: translate(0px,-1px);}
+    58%{transform: translate(0px,1px);}
+    60%{transform: translate(0px,-1px);}
+
+    84%{transform: translate(0px,1px);}
+    86%{transform: translate(0px,-1px);}
+    88%{transform: translate(0px,1px);}
+    90%{transform: translate(0px,-1px);}
+
+    92%{transform: translate(0px,1px);}
+    93%{transform: translate(0px,-1px);}
+    94%{transform: translate(0px,1px);}
+    95%{transform: translate(0px,-1px);}
+
+    96%{transform: translate(0px,1px);}
+    97%{transform: translate(0px,-1px);}
+    98%{transform: translate(0px,1px);}
+    99%{transform: translate(0px,-1px);}
+
+    100%{transform: translate(0px,0px);}
+}
+
+@keyframes movePaw1 {
+    0% {transform: translate(0px, 0px);}
+
+    50% {transform: translate(0px, -5px);}
+    60% {transform: translate(0px, 0px);}
+    70% {transform: translate(0px, -5px);}
+    80% {transform: translate(0px, 0px);}
+    90% {transform: translate(0px, -5px);}
+
+    100{transform: translate(0px, 0px);}
+}
+@keyframes movePaw2 {
+    0% {transform: translate(0px, 0px);}
+
+    40% {transform: translate(0px, -4px);}
+    50% {transform: translate(0px, 0px);}
+    60% {transform: translate(0px, -5px);}
+    70% {transform: translate(0px, 0px);}
+    80% {transform: translate(0px, -3px);}
+
+    100{transform: translate(0px, 0px);}
+}
+
+@keyframes moveWhisker {
+    0%{transform: skewX(0deg);}
+    50%{transform: skewX(0deg);}
+
+    60% {transform: skewX(-10deg);}
+    70% {transform: skewX(10deg);}
+    80% {transform: skewX(-10deg);}
+    90% {transform: skewX(10deg);}
+
+    100%{transform: skewX(0deg);}
+}
+@keyframes moveWhisker {
+    0%{transform: skewX(0deg);}
+    50%{transform: skewX(0deg);}
+
+    60% {transform: skewX(-5deg);}
+    70% {transform: skewX(5deg);}
+    80% {transform: skewX(-5deg);}
+    90% {transform: skewX(5deg);}
+
+    100%{transform: skewX(0deg);}
+}
+
+@keyframes hypnotize {
+      0% {opacity: 100%;}
+      25% {opacity: 50%;}
+      50% {opacity: 5%;}
+      75% {opacity: 50%;}
+      100% {opacity: 99%;}
+}

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>The Power Of Meow</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
+
+	<!-- added next scripts after Moralis login wasn't working -->
+	<!-- they are in the old site, just forgot -->
+	<script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+	<script type="text/javascript" src="assets/js/jquery-3.4.1.js"></script>
+
+	<script type="text/javascript" src="./web3.min.js"></script>
+
+  <script src="./abi.js"></script>
+
+
+
+	<link href="style.css" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/animations.css">
+	<link rel="stylesheet" href="assets/css/cats.css">
+	<link rel="stylesheet" href="assets/css/colors.css">
+
+</head>
+
+<!-- MODAL SELL WINDOW -->
+
+<div class="modal fade" id="sellWindow" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-xl">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Put your kitty up for sale</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+
+			<div class="modal-body catalogueWindow">
+					<div class="row justify-content-center" id="kittyForSale">
+							<!-- cats get rendered in here! -->
+					</div>
+			</div>
+
+			<div class="modal-footer justify-content-center">
+					<div class="row" id="saleWindow">
+
+						<div class="input-group mb-3">
+  						<!-- <div class="input-group-prepend">
+    						<span class="input-group-text" id="inputGroup-sizing-default"></span>
+  						</div> -->
+  						<input min="0.01" id="setPriceInput" placeholder="Enter Price (ETH)" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+							<div class="input-group-append">
+    						<button class="btn btn-primary" id="sellButton" type="button">Sell Kitty</button>
+    						<button class="btn btn-primary" id="removeButton" type="button">Remove Offer</button>
+  						</div>
+						</div>
+
+					</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-light sticky-top">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="index.html"><i class="fas fa-cat"></i> The Power Of Meow</a>
+		<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="mykitties.html">My Kitties</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="marketplace.html">Marketplace</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="catfactory.html">Cat Factory</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<!-- page caption -->
+<div class="factory-caption">
+	<h1 class="display-2">Catalogue</h1>
+	<h3>View, breed and sell your kitties</h3>
+</div>
+
+<!-- if user has no cats -->
+<div style="text-align: center" id="userHasNoCats">
+	<h6>Looks like you don't have any kitties</h6>
+	<br>
+	<p>How sad...<i class="far fa-sad-tear"></i></p>
+	<br>
+	<h6>Visit the Marketplace to get some cats</h6>
+</div>
+
+<!-- breed button -->
+
+	<div class ="row m-3 justify-content-center">
+		<button type="button" class="btn btn-primary btn-lg"
+		onclick="location.href='breed.html';" id="breedButton">Breed</button>
+	</div>
+
+<!-- DISPLAY AREA FOR CATS -->
+
+	<!-- Cat boxes -->
+	<div class="cursor"></div>
+	<div class="container-fluid">
+			<div class="row justify-content-center" id="catsDiv">
+
+
+			</div>
+	</div>
+
+
+
+<div class="row bottomSpacer"></div>
+
+<!--- Footer -->
+<footer>
+	<div class="container-fluid">
+		<div class="row text-center">
+
+			<div class="col-12 p-0">
+				<hr class="light">
+				<h5>About</h5>
+				<hr class="light">
+				<br>
+				<p>This Dapp was created for the Moralis Academy</p>
+        <p>Ethereum Dapp Programming course</p>
+			</div>
+
+			<div class="col-12 p-0">
+				<hr class="light">
+				<h6>&copy; 2021 Attiss Ngo </h6>
+			</div>
+
+	</div>
+</footer>
+
+<!-- hide buttons & divs -->
+<script>
+	$("#userHasNoCats").hide()
+	$("#breedButton").hide()
+</script>
+
+<!-- <script>
+  $("#setPriceInput").change(function(){
+    $("#sellButton").prop('disabled', false);
+  })
+</script> -->
+
+<!-- create catalogue when page loads -->
+<script>
+	$(document).ready(function () {
+    setTimeout(() => {
+			showCatalogue("myKitties")
+	  }, 1000)
+	});
+</script>
+
+
+</body>
+
+<script src="./main.js"></script>
+<script src="assets/js/renderCats.js"></script>
+<script src="assets/js/styleSingleCat.js"></script>
+<script src="assets/js/colors.js"></script>
+<script src="assets/js/colors2.js"></script>
+<!-- <script src="assets/js/catSettings.js"></script> -->
+<!-- <script src="assets/js/catFactory.js"></script> -->
+
+</html>
